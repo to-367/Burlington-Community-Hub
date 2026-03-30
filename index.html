@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burlington Community Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- NAV -->
+    <nav>
+        <div id="nav-inner">
+            <a href="#top">Burlington Community Hub</a>
+            <ul id="nav-links">
+                <li><a href="#highlights" class="hover-underline-animation">Highlights</a></li>
+                <li><a href="#directory" class="hover-underline-animation">Directory</a></li>
+                <li id="nav-cta"><a href="#resource-form" class="hover-underline-animation">Submit Listing</a></li>
+            </ul>
+        </div>
+     </nav>
+
+    <!-- HERO -->
+    <div id="hero">
+        <div class="hero-head">
+            <div class="line"></div><span>Burlington, IA. Est. 1833</span><div class="line"></div>
+        </div>
+        <div class="hero-rule">
+            <h1>Welcome to the Hub.</h1>
+        </div>
+        <div class="hero-sub">
+            Your one-stop shop for resources, events, and everything Burlington.
+        </div>
+    </div>
+
+    <!-- HIGHLIGHTS -->
+    <section id="highlights">
+        <div class="section-header">
+            <div class="section-kicker">HIGHLIGHTS</div>
+            <h2>Community Resources</h2>
+        </div>
+        <div class="section-divider"></div>
+        <div class="highlights-grid">
+            <div class="highlight-card fade-in-from-bottom">
+                <div class="hcard-title">Southeast Iowa Food Bank</div>
+                <p class="hcard-desc">Providing food assistance to families across Des Moines County. 
+                    Walk-in pantry hours available weekly — no appointment needed for emergency boxes.</p>
+                <div class="card-divider"></div>
+                <div class="hcard-loc"><i class="fa-solid fa-location-dot"></i> 2910 Agency St, Burlington</div>
+            </div>
+            <div class="highlight-card fade-in-from-bottom">
+                <div class="hcard-title">Burlington YMCA</div>
+                <p class="hcard-desc">After-school programs, youth sports leagues, summer day camps, 
+                    and swim lessons. Financial assistance available — no child turned away for inability to pay.</p>
+                <div class="card-divider"></div>
+                <div class="hcard-loc"><i class="fa-solid fa-location-dot"></i> 2410 Mt Pleasant St, Burlington</div>
+            </div>
+            <div class="highlight-card fade-in-from-bottom">
+                <div class="hcard-title">Great River Health System</div>
+                <p class="hcard-desc">Full-service regional hospital and clinics offering primary care, 
+                    emergency services, mental health programs, and financial assistance for uninsured patients.</p>
+                <div class="card-divider"></div>
+                <div class="hcard-loc"><i class="fa-solid fa-location-dot"></i>1221 S Gear Ave, West Burlington</div>
+            </div>
+            <div class="highlight-card fade-">
+                <div class="hcard-title">Burlington Community Housing</div>
+                <p class="hcard-desc">Rental assistance, emergency shelter referrals, 
+                    and affordable housing applications. Serving Burlington residents experiencing housing instability or homelessness.</p>
+                <div class="card-divider"></div>
+                <div class="hcard-phone"><i class="fa-solid fa-phone"></i> (319) 754-4444</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIRECTORY -->
+    <section id="directory">
+        <div class="section-header">
+            <div class="section-kicker">FULL LISTING</div>
+            <h2>Resource Directory</h2>
+        </div>
+        <div class="section-divider"></div>
+        <div id="dir-controls">
+            <label for="filter-dropdown">Filter:</label>
+            <select id="filter-dropdown" name="rsrc-type" onchange="filterContent()">
+                <option value="all" selected>All</option>
+                <option value="arts">Arts</option>
+                <option value="education">Education</option>
+                <option value="employment">Employment</option>
+                <option value="food">Food</option>
+                <option value="health">Health</option>
+                <option value="housing">Housing</option>
+                <option value="parks">Parks</option>
+                <option value="social">Social</option>
+            </select>
+            <input type="text" id="search-bar"><button id="search-btn" onclick="searchContent()"><i class="fas fa-search"></i></button>
+        </div>
+        <div id="directory-grid"></div>
+    </section>
+
+    <!-- FORM -->
+     <section id="resource-form">
+        <div class="section-header">
+            <div class="section-kicker">FORM</div>
+            <h2>Submit a Resource</h2>
+        </div>
+        <div class="section-divider"></div>
+        <div id="resource-form-inner">
+            <div id="form-text">
+                <div id="form-text-inner">
+                    <p>Have an awesome resource to add? Fill out this form so we can share it with the rest of the community.</p>
+                    <p>Each submission will be reviewed by our team before being added to the directory.</p>
+                </div>
+            </div>
+            <form>
+                <label for="name">Resource Name * </label>
+                <input type="text" id="name" name="name" required>
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="resource-type">Type * </label>
+                        <select id="resource-type" name="resource-type" required>
+                            <option value="all" selected>All</option>
+                            <option value="arts">Arts</option>
+                            <option value="education">Education</option>
+                            <option value="employment">Employment</option>
+                            <option value="food">Food</option>
+                            <option value="health">Health</option>                    
+                            <option value="housing">Housing</option>
+                            <option value="parks">Parks</option>
+                            <option value="social">Social</option>
+                        </select>
+                    </div>
+                    <div class="form-col">
+                        <label for="other-type">Type if other </label>
+                        <input type="text" id="other-type" name="other-type">
+                    </div>
+                </div>
+                <label for="description">Description * </label>
+                <textarea id="description" name="description" cols="50" required></textarea>
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="address">Address </label>
+                        <input id="address" name="address" type="text">
+                    </div>
+                    <div class="form-col">
+                        <label for="phone">Phone number </label>
+                        <input id="phone" name="phone" type="tel">
+                    </div>
+                </div>
+                <label for="your-email">Your email address *</label>
+                <input type="mail" id="email" name="email" required>
+                <input id="submit-btn" type="submit" value="Submit">
+            </form>
+        </div>
+     </section>
+     <footer>
+        <div id="footer-inner">
+            <div id="footer-blurb">
+                <div id="footer-blurb-inner">
+                    <h3>The Hub</h3>
+                    <p>A community-run resource hub for Burlington, Iowa. Helping residents
+                        meet their needs and find solutions at home.
+                    </p>
+                    <div id="footer-blurb-sub"><div class="line"></div><span>Burlington, IA - Est. 1833</span><div class="line"></div></div>
+                </div>
+            </div>
+            <div id="footer-nav">
+                <h4>Quick Links</h4>
+                <ul class="footer-nav-links">
+                    <li><a href="#highlights">Highlights</a></li>
+                    <li><a href="#directory">Directory</a></li>
+                    <li><a href="#resource-form">Submit Listing</a></li>
+                </ul>
+            </div>
+            <div id="footer-ext-links">
+                <h4>Other Resources</h4>
+                <ul class="footer-nav-links">
+                    <li><a href="https://www.greaterburlington.com/" target="_blank">Greater Burlington Partnership</a></li>
+                    <li><a href="https://www.burlingtoniowa.org/" target="_blank">City of Burlington</a></li>
+                    <li><a href="https://www.burlington.lib.ia.us/" target="_blank">Burlington Public Library</a></li>
+                </ul>
+            </div>
+        </div>
+     </footer>
+       
+    <script src="https://kit.fontawesome.com/c1360adb41.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
