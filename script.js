@@ -62,7 +62,7 @@ function displayContent(items) {
     grid.innerHTML = "";
     items.forEach(item => {
         let htmlString = `
-        <div class="resource-card fade-in-from-bottom">
+        <div class="resource-card">
             <div class="rcard-title">${item.name}</div>
             <p class="rcard-desc">${item.desc}</p>
             <div class="card-divider"></div>
